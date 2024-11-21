@@ -1,6 +1,6 @@
 <template>
-	<div class="card">
-		<div class="content" @click="toLink">
+	<div class="card" @click="toLink">
+		<div class="content">
 			<div class="icon">
 				<slot></slot>
 			</div>
@@ -16,13 +16,13 @@
 
 <script setup lang="ts">
 const props = defineProps({
-	title: String,
-	description: String,
-	to: String,
+    title: String,
+    description: String,
+    to: String,
 })
 
 const toLink = () => {
-	navigateTo(props.to)
+    navigateTo(props.to)
 }
 </script>
 
@@ -69,6 +69,8 @@ $text-light: #1f2937;
 		.description {
 			text-align: center;
 			font-size: 14px;
+			letter-spacing: 1px;
+			line-height: 1.6;
 			color: var(--t-text-color-7);
 		}
 	}

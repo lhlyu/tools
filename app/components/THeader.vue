@@ -22,6 +22,7 @@
 
 <script setup lang="ts">
 const colorMode = useColorMode()
+
 const toggleThemeMode = () => {
     if (colorMode.preference === 'system') {
         colorMode.preference = 'light'
@@ -33,9 +34,8 @@ const toggleThemeMode = () => {
 }
 
 const toHome = () => {
-	navigateTo('/')
+    navigateTo('/')
 }
-
 </script>
 
 <style scoped lang="scss">

@@ -13,10 +13,13 @@ export default defineNuxtConfig({
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1',
             title: '工具集',
+            link: [
+                { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/lxgwwenkaimonoscreen/result.css' }
+            ]
         },
         rootTag: 'body',
     },
-    modules: ['nuxt-lucide-icons', '@nuxtjs/i18n', '@nuxtjs/color-mode', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+    modules: ['@vueuse/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots', 'nuxt-lucide-icons', '@nuxtjs/i18n', '@nuxtjs/color-mode'],
     site: {
         url: 'https://tools.tatakai.top/',
         name: '工具集 | toolset'
