@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "fmt": "pnpm biome format --write ./app"
+  },
+  "dependencies": {
+    "lucide-vue-next": "^0.460.0",
+    "nuxt": "^3.14.1592",
+    "nuxt-lucide-icons": "^1.0.5",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@nuxtjs/color-mode": "^3.5.2",
+    "@nuxtjs/i18n": "^9.1.0",
+    "sass": "^1.81.0"
+  }
+}
