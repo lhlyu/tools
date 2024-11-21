@@ -27,8 +27,6 @@ import {
 	DropletIcon
 } from "lucide-vue-next";
 
-const { t } = useI18n()
-
 const tools = [
 	{
 		name:'tools.encode.name',

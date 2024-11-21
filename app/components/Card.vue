@@ -1,6 +1,6 @@
 <template>
 	<div class="card">
-		<div class="content">
+		<div class="content" @click="toLink">
 			<div class="icon">
 				<slot></slot>
 			</div>
@@ -11,18 +11,19 @@
 				{{ description }}
 			</p>
 		</div>
-		<div class="footer">
-			<a :href="to" class="link">{{ $t('more') }} &rarr;</a>
-		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
 	title: String,
 	description: String,
 	to: String,
 })
+
+const toLink = () => {
+	navigateTo(props.to)
+}
 </script>
 
 <style scoped lang="scss">
@@ -35,6 +36,7 @@ $text-light: #1f2937;
 	overflow: hidden;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s;
+	cursor: pointer;
 	
 	&:hover {
 		transform: translateY(-4px);
@@ -66,22 +68,8 @@ $text-light: #1f2937;
 		
 		.description {
 			text-align: center;
+			font-size: 14px;
 			color: var(--t-text-color-7);
-		}
-	}
-	
-	.footer {
-		padding: 16px 24px;
-		transition: color 0.3s;
-		background-color: var(--t-card-footer-bg-color);
-		
-		.link {
-			display: block;
-			text-align: center;
-			color: var(--t-primary-color);
-			font-weight: 500;
-			text-decoration: none;
-			
 		}
 	}
 }
