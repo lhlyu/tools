@@ -12,7 +12,7 @@
 					<LucideMoon v-else />
 				</button>
 				<LanguageSelector></LanguageSelector>
-				<a href="https://github.com/lhlyu/tools" class="button-icon">
+				<a href="https://github.com/lhlyu/tools" target="_blank" class="button-icon">
 					<LucideGithub />
 				</a>
 			</div>

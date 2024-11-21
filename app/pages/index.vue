@@ -96,6 +96,7 @@ const tools = [
 	width: 100%;
 	height: 100%;
 	overflow: auto;
+	scroll-behavior: smooth;
 	
 	main {
 		min-height: calc(100% - var(--t-header-height) - var(--t-footer-height));

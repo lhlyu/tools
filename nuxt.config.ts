@@ -32,8 +32,19 @@ export default defineNuxtConfig({
                 name: "English",
             },
         ],
+        strategy: "no_prefix",
         langDir: "",
         defaultLocale: "zh",
+        detectBrowserLanguage: {
+            useCookie: true,
+            cookieKey: "i18n_redirected",
+            redirectOn: "root",
+            alwaysRedirect: true
+        },
+
+        precompile: {
+            strictMessage: false,
+        },
     },
 
 })
