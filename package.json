@@ -11,6 +11,8 @@
     "fmt": "pnpm biome format --write ./app"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^4.1.11",
+    "@nuxtjs/sitemap": "^6.1.5",
     "lucide-vue-next": "^0.460.0",
     "nuxt": "^3.14.1592",
     "nuxt-lucide-icons": "^1.0.5",

@@ -1,1 +1,3 @@
-
+User-agent: *
+Allow: /
+Sitemap: https://tools.tatakai.top/sitemap.xml

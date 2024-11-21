@@ -2,8 +2,8 @@
 	<header>
 		<div class="header">
 			<div class="logo">
-				<LucideWrench class="icon" />
-				<div class="title">{{ $t('title') }}</div>
+				<LucideWrench class="icon" @click="toHome" />
+				<div class="title" @click="toHome">{{ $t('title') }}</div>
 			</div>
 			<div class="actions">
 				<button @click="toggleThemeMode" class="button-icon">
@@ -31,6 +31,11 @@ const toggleThemeMode = () => {
         colorMode.preference = 'system'
     }
 }
+
+const toHome = () => {
+	navigateTo('/')
+}
+
 </script>
 
 <style scoped lang="scss">
@@ -59,6 +64,7 @@ header {
 			display: flex;
 			align-items: center;
 			gap: 8px;
+			cursor: pointer;
 			
 			.icon {
 				width: 32px;

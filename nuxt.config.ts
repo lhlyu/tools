@@ -16,7 +16,11 @@ export default defineNuxtConfig({
         },
         rootTag: 'body',
     },
-    modules: ['nuxt-lucide-icons', '@nuxtjs/i18n', '@nuxtjs/color-mode'],
+    modules: ['nuxt-lucide-icons', '@nuxtjs/i18n', '@nuxtjs/color-mode', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+    site: {
+        url: 'https://tools.tatakai.top/',
+        name: '工具集 | toolset'
+    },
     i18n: {
         locales: [
             {

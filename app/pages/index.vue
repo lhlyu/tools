@@ -1,20 +1,17 @@
 <template>
-	<div class="container">
-		<THeader></THeader>
-		<main>
-			<div class="cards">
-				<Card v-for="tool in tools"
-				      :key="tool.name"
-				      :title="$t(tool.name)"
-				      :description="$t(tool.description)"
-				      :to="tool.link"
-				>
-					<component :is="tool.icon" :size="32"  />
-				</Card>
-			</div>
-		</main>
-		<TFooter></TFooter>
-	</div>
+	<main>
+		<div class="cards">
+			<Card v-for="tool in tools"
+			      :key="tool.name"
+			      :title="$t(tool.name)"
+			      :description="$t(tool.description)"
+			      :to="tool.link"
+			>
+				<component :is="tool.icon" :size="32"  />
+			</Card>
+		</div>
+	</main>
+	<TFooter></TFooter>
 </template>
 
 <script setup lang="ts">
@@ -37,7 +34,7 @@ const tools = [
 		name:'tools.encode.name',
 		description:'tools.encode.desc',
 		icon: CodeIcon,
-		link: '#encode-decode'
+		link: '/encode'
 	},
 	{
 		name:'tools.encrypt.name',
@@ -92,25 +89,18 @@ const tools = [
 </script>
 
 <style lang="scss" scoped>
-.container {
+main {
+	min-height: calc(100% - var(--t-header-height) - var(--t-footer-height));
+	max-width: var(--t-max-width);
 	width: 100%;
-	height: 100%;
-	overflow: auto;
-	scroll-behavior: smooth;
+	margin: 0 auto;
+	padding: 32px 16px;
 	
-	main {
-		min-height: calc(100% - var(--t-header-height) - var(--t-footer-height));
-		max-width: var(--t-max-width);
-		width: 100%;
-		margin: 0 auto;
-		padding: 32px 16px;
-		
-		
-		.cards {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(var(--t-card-min-width), 1fr));
-			gap: 32px;
-		}
+	
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(var(--t-card-min-width), 1fr));
+		gap: 32px;
 	}
 }
 </style>
