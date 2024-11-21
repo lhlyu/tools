@@ -5,8 +5,8 @@
 			<div class="cards">
 				<Card v-for="tool in tools"
 				      :key="tool.name"
-				      :title="tool.name"
-				      :description="tool.description"
+				      :title="$t(tool.name)"
+				      :description="$t(tool.description)"
 				      :to="tool.link"
 				>
 					<component :is="tool.icon" :size="32"  />
@@ -34,56 +34,56 @@ const { t } = useI18n()
 
 const tools = [
 	{
-		name: t('tools.encode.name'),
-		description: t('tools.encode.desc'),
+		name:'tools.encode.name',
+		description:'tools.encode.desc',
 		icon: CodeIcon,
 		link: '#encode-decode'
 	},
 	{
-		name: t('tools.encrypt.name'),
-		description: t('tools.encrypt.desc'),
+		name:'tools.encrypt.name',
+		description:'tools.encrypt.desc',
 		icon: ShieldIcon,
 		link: '#encrypt-decrypt'
 	},
 	{
-		name: t('tools.time.name'),
-		description: t('tools.time.desc'),
+		name:'tools.time.name',
+		description:'tools.time.desc',
 		icon: ClockIcon,
 		link: '#time-conversion'
 	},
 	{
-		name: t('tools.short.name'),
-		description: t('tools.short.desc'),
+		name:'tools.short.name',
+		description:'tools.short.desc',
 		icon: LinkIcon,
 		link: '#short-link-generation'
 	},
 	{
-		name: t('tools.qr.name'),
-		description: t('tools.qr.desc'),
+		name:'tools.qr.name',
+		description:'tools.qr.desc',
 		icon: QrCodeIcon,
 		link: '#qr-code-generation'
 	},
 	{
-		name: t('tools.jsonPath.name'),
-		description: t('tools.jsonPath.desc'),
+		name:'tools.jsonPath.name',
+		description:'tools.jsonPath.desc',
 		icon: DatabaseIcon,
 		link: '#jsonpath'
 	},
 	{
-		name: t('tools.random.name'),
-		description: t('tools.random.desc'),
+		name:'tools.random.name',
+		description:'tools.random.desc',
 		icon: RefreshCwIcon,
 		link: '#random-generation'
 	},
 	{
-		name: t('tools.image.name'),
-		description: t('tools.image.desc'),
+		name:'tools.image.name',
+		description:'tools.image.desc',
 		icon: ImageIcon,
 		link: '#image-format-conversion'
 	},
 	{
-		name: t('tools.color.name'),
-		description: t('tools.color.desc'),
+		name:'tools.color.name',
+		description:'tools.color.desc',
 		icon: DropletIcon,
 		link: '#color-conversion'
 	}
