@@ -1,10 +1,11 @@
 <template>
+	<Title>{{ $t('pages.encode.title') }}</Title>
 	<div class="encode">
 		<div class="input">
 			<textarea placeholder="输入..."></textarea>
 		</div>
 		<div class="actions">
-			操作
+			一级分类、二级分类、编码、解码、复制
 		</div>
 		<div class="output">
 			<textarea placeholder="输出..."></textarea>
@@ -12,8 +13,16 @@
 	</div>
 </template>
 
-<script setup>
-
+<script setup lang="ts">
+const encoder = ref('base64')
+const encoders = [
+	{ label: 'Base64', value: 'base64' },
+	{ label: 'Base58', value: 'base58' },
+	{ label: 'Base32', value: 'base32' },
+	{ label: 'Base16', value: 'base16' },
+	{ label: 'URL', value: 'url' },
+	{ label: 'Base32', value: 'base32' },
+]
 </script>
 
 <style lang="scss" scoped>

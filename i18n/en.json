@@ -1,42 +1,49 @@
 {
   "title": "ToolSet",
   "more": "More",
-  "tools": {
+  "pages": {
+    "index": {
+      "tools": {
+        "encode": {
+          "name": "Encode/Decode",
+          "desc": "Supports common encoding operations such as Base64 and URL encoding/decoding"
+        },
+        "encrypt": {
+          "name": "Encrypt/Decrypt",
+          "desc": "Supports symmetric encryption (AES/DES) and asymmetric encryption (RSA) operations"
+        },
+        "time": {
+          "name": "Time Conversion",
+          "desc": "Supports conversion between Unix timestamps and human-readable time"
+        },
+        "short": {
+          "name": "Short Link Generation",
+          "desc": "Converts long URLs into short links, supporting custom domains"
+        },
+        "qr": {
+          "name": "QR Code Generation",
+          "desc": "Generates QR codes for text, links, and other content"
+        },
+        "jsonPath": {
+          "name": "JsonPath",
+          "desc": "Parses JSON data and supports JsonPath queries and validation"
+        },
+        "random": {
+          "name": "Random Generation",
+          "desc": "Generates random strings of specified lengths, supporting letters, numbers, and symbols"
+        },
+        "image": {
+          "name": "Image Format Conversion",
+          "desc": "Supports converting between image formats (e.g., PNG to JPG) and image compression"
+        },
+        "color": {
+          "name": "Color Conversion",
+          "desc": "Supports conversions between RGB, HEX, HSL, and other color modes"
+        }
+      }
+    },
     "encode": {
-      "name": "Encode/Decode",
-      "desc": "Supports common encoding operations such as Base64 and URL encoding/decoding"
-    },
-    "encrypt": {
-      "name": "Encrypt/Decrypt",
-      "desc": "Supports symmetric encryption (AES/DES) and asymmetric encryption (RSA) operations"
-    },
-    "time": {
-      "name": "Time Conversion",
-      "desc": "Supports conversion between Unix timestamps and human-readable time"
-    },
-    "short": {
-      "name": "Short Link Generation",
-      "desc": "Converts long URLs into short links, supporting custom domains"
-    },
-    "qr": {
-      "name": "QR Code Generation",
-      "desc": "Generates QR codes for text, links, and other content"
-    },
-    "jsonPath": {
-      "name": "JsonPath",
-      "desc": "Parses JSON data and supports JsonPath queries and validation"
-    },
-    "random": {
-      "name": "Random Generation",
-      "desc": "Generates random strings of specified lengths, supporting letters, numbers, and symbols"
-    },
-    "image": {
-      "name": "Image Format Conversion",
-      "desc": "Supports converting between image formats (e.g., PNG to JPG) and image compression"
-    },
-    "color": {
-      "name": "Color Conversion",
-      "desc": "Supports conversions between RGB, HEX, HSL, and other color modes"
+      "title": "Encode/Decode"
     }
   }
 }

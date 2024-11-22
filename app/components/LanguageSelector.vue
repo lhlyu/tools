@@ -9,8 +9,9 @@
 	</Dropdown>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const { setLocale, locale } = useI18n()
+
 
 const languages = [
     { label: '简体中文', value: 'zh' },

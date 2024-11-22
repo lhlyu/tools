@@ -1,4 +1,5 @@
 <template>
+	<Title>{{ $t('title') }}</Title>
 	<main>
 		<div class="cards">
 			<Card v-for="tool in tools"
@@ -29,56 +30,56 @@ import {
 
 const tools = [
     {
-        name: 'tools.encode.name',
-        description: 'tools.encode.desc',
+        name: 'pages.index.tools.encode.name',
+        description: 'pages.index.tools.encode.desc',
         icon: CodeIcon,
         link: '/encode',
     },
     {
-        name: 'tools.encrypt.name',
-        description: 'tools.encrypt.desc',
+        name: 'pages.index.tools.encrypt.name',
+        description: 'pages.index.tools.encrypt.desc',
         icon: ShieldIcon,
         link: '#encrypt-decrypt',
     },
     {
-        name: 'tools.time.name',
-        description: 'tools.time.desc',
+        name: 'pages.index.tools.time.name',
+        description: 'pages.index.tools.time.desc',
         icon: ClockIcon,
         link: '#time-conversion',
     },
     {
-        name: 'tools.short.name',
-        description: 'tools.short.desc',
+        name: 'pages.index.tools.short.name',
+        description: 'pages.index.tools.short.desc',
         icon: LinkIcon,
         link: '#short-link-generation',
     },
     {
-        name: 'tools.qr.name',
-        description: 'tools.qr.desc',
+        name: 'pages.index.tools.qr.name',
+        description: 'pages.index.tools.qr.desc',
         icon: QrCodeIcon,
         link: '#qr-code-generation',
     },
     {
-        name: 'tools.jsonPath.name',
-        description: 'tools.jsonPath.desc',
+        name: 'pages.index.tools.jsonPath.name',
+        description: 'pages.index.tools.jsonPath.desc',
         icon: DatabaseIcon,
         link: '#jsonpath',
     },
     {
-        name: 'tools.random.name',
-        description: 'tools.random.desc',
+        name: 'pages.index.tools.random.name',
+        description: 'pages.index.tools.random.desc',
         icon: RefreshCwIcon,
         link: '#random-generation',
     },
     {
-        name: 'tools.image.name',
-        description: 'tools.image.desc',
+        name: 'pages.index.tools.image.name',
+        description: 'pages.index.tools.image.desc',
         icon: ImageIcon,
         link: '#image-format-conversion',
     },
     {
-        name: 'tools.color.name',
-        description: 'tools.color.desc',
+        name: 'pages.index.tools.color.name',
+        description: 'pages.index.tools.color.desc',
         icon: DropletIcon,
         link: '#color-conversion',
     },

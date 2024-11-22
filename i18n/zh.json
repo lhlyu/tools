@@ -1,42 +1,49 @@
 {
   "title": "工具集",
   "more": "更多",
-  "tools": {
+  "pages": {
+    "index": {
+      "tools": {
+        "encode": {
+          "name": "编码/解码",
+          "desc": "支持 Base64、URL 编码/解码等常见编码操作"
+        },
+        "encrypt": {
+          "name": "加密/解密",
+          "desc": "支持对称加密（AES/DES）和非对称加密（RSA）的加解密操作"
+        },
+        "time": {
+          "name": "时间转化",
+          "desc": "支持 Unix 时间戳与人类可读时间的互相转换"
+        },
+        "short": {
+          "name": "短链生成",
+          "desc": "将长链接缩短为短链接，支持自定义域名"
+        },
+        "qr": {
+          "name": "二维码生成",
+          "desc": "生成二维码，支持文本、链接等多种内容"
+        },
+        "jsonPath": {
+          "name": "JsonPath",
+          "desc": "解析 JSON 数据，支持 JsonPath 查询与验证"
+        },
+        "random": {
+          "name": "随机生成",
+          "desc": "生成指定长度的随机字符串，支持字母、数字和符号"
+        },
+        "image": {
+          "name": "图片格式转换",
+          "desc": "支持将图片格式互转（如 PNG 转 JPG），以及图片压缩"
+        },
+        "color": {
+          "name": "颜色转换",
+          "desc": "支持 RGB、HEX、HSL 等多种颜色模式的互转"
+        }
+      }
+    },
     "encode": {
-      "name": "编码/解码",
-      "desc": "支持 Base64、URL 编码/解码等常见编码操作"
-    },
-    "encrypt": {
-      "name": "加密/解密",
-      "desc": "支持对称加密（AES/DES）和非对称加密（RSA）的加解密操作"
-    },
-    "time": {
-      "name": "时间转化",
-      "desc": "支持 Unix 时间戳与人类可读时间的互相转换"
-    },
-    "short": {
-      "name": "短链生成",
-      "desc": "将长链接缩短为短链接，支持自定义域名"
-    },
-    "qr": {
-      "name": "二维码生成",
-      "desc": "生成二维码，支持文本、链接等多种内容"
-    },
-    "jsonPath": {
-      "name": "JsonPath",
-      "desc": "解析 JSON 数据，支持 JsonPath 查询与验证"
-    },
-    "random": {
-      "name": "随机生成",
-      "desc": "生成指定长度的随机字符串，支持字母、数字和符号"
-    },
-    "image": {
-      "name": "图片格式转换",
-      "desc": "支持将图片格式互转（如 PNG 转 JPG），以及图片压缩"
-    },
-    "color": {
-      "name": "颜色转换",
-      "desc": "支持 RGB、HEX、HSL 等多种颜色模式的互转"
+      "title": "编码/解码"
     }
   }
 }
