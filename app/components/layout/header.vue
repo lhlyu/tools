@@ -73,7 +73,3 @@ const toGithub = () => {
     window.open(`https://github.com/lhlyu/tools`, '_blank')
 }
 </script>
-
-<style scoped lang="scss">
-
-</style>
