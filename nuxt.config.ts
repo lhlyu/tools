@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     srcDir: 'app/',
     devtools: { enabled: false },
-    css: ['assets/styles/index.scss'],
+    css: ['assets/styles/main.css'],
     app: {
         keepalive: true,
         head: {
@@ -13,18 +13,16 @@ export default defineNuxtConfig({
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1',
             title: '工具集',
-            link: [
-                { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/lxgwwenkaimonoscreen/result.css' }
-            ]
         },
         rootTag: 'body',
     },
     modules: [
-      '@nuxtjs/sitemap',
-      '@nuxtjs/robots',
-      'nuxt-lucide-icons',
-      '@nuxtjs/i18n',
-      '@nuxtjs/color-mode',
+        '@nuxtjs/sitemap',
+        '@nuxtjs/robots',
+        '@nuxtjs/i18n',
+        '@nuxtjs/color-mode',
+        '@nuxtjs/tailwindcss',
+        'shadcn-nuxt'
     ],
     site: {
         url: 'https://tools.tatakai.top/',
@@ -54,9 +52,17 @@ export default defineNuxtConfig({
             redirectOn: "root",
             alwaysRedirect: true
         },
-
-        precompile: {
-            strictMessage: false,
-        },
     },
+    colorMode: {
+        preference: 'light',
+        fallback: 'light',
+        classPrefix: '',
+        classSuffix: '',
+        storage: 'localStorage',
+        storageKey: 'nuxt-color-mode'
+    },
+    shadcn: {
+        prefix: '',
+        componentDir: './app/components/ui'
+    }
 })

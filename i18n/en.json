@@ -42,8 +42,12 @@
         }
       }
     },
-    "encode": {
-      "title": "Encode/Decode"
+      "encode": {
+      "title": "Encode/Decode",
+        "input": "Input...",
+        "output": "Output...",
+      "encode": "Encode",
+      "decode": "Decode"
     }
   }
 }

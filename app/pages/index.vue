@@ -1,21 +1,16 @@
 <template>
-	<Title>{{ $t('title') }}</Title>
-	<main>
-		<div class="cards">
-			<Card v-for="tool in tools"
-			      :key="tool.name"
-			      :title="$t(tool.name)"
-			      :description="$t(tool.description)"
-			      :to="tool.link"
-			>
-				<component :is="tool.icon" :size="32"  />
-			</Card>
-		</div>
-	</main>
-	<TFooter></TFooter>
+	<div class="cards grid gap-4">
+		<TCard v-for="tool in tools"
+		       :key="tool.name"
+		       :title="$t(tool.name)"
+		       :description="$t(tool.description)"
+		       :to="tool.link" >
+			<component :is="tool.icon" class="w-8 h-8 text-primary" />
+		</TCard>
+	</div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {
     CodeIcon,
     ShieldIcon,
@@ -39,7 +34,7 @@ const tools = [
         name: 'pages.index.tools.encrypt.name',
         description: 'pages.index.tools.encrypt.desc',
         icon: ShieldIcon,
-        link: '#encrypt-decrypt',
+        link: '/demo',
     },
     {
         name: 'pages.index.tools.time.name',
@@ -87,18 +82,7 @@ const tools = [
 </script>
 
 <style lang="scss" scoped>
-main {
-	min-height: calc(100% - var(--t-header-height) - var(--t-footer-height));
-	max-width: var(--t-max-width);
-	width: 100%;
-	margin: 0 auto;
-	padding: 32px 16px;
-	
-	
-	.cards {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(var(--t-card-min-width), 1fr));
-		gap: 32px;
-	}
+.cards {
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 </style>

@@ -43,7 +43,11 @@
       }
     },
     "encode": {
-      "title": "编码/解码"
+      "title": "编码/解码",
+      "input": "输入...",
+      "output": "输出...",
+      "encode": "编码",
+      "decode": "解码"
     }
   }
 }
