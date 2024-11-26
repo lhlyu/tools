@@ -3,10 +3,3 @@
 		© 2024 谕℃. All rights reserved.
 	</div>
 </template>
-
-<script setup lang="ts">
-
-</script>
-
-<style scoped lang="scss">
-</style>

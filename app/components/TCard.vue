@@ -23,7 +23,3 @@ const toLink = () => {
     navigateTo(props.to)
 }
 </script>
-
-<style scoped lang="scss">
-
-</style>
