@@ -13,7 +13,7 @@
 				<SelectTrigger class="w-[100px]">
 					<SelectValue placeholder="Select a timezone" />
 				</SelectTrigger>
-				<SelectContent>
+				<SelectContent class="h-[200px]">
 					<SelectItem v-for="v in encodes[enc]" :value="v" :key="v">
 						{{ v }}
 					</SelectItem>
@@ -25,8 +25,9 @@
 			<Button variant="outline" @click="decode">
 				{{ $t('pages.encode.decode') }}
 			</Button>
-			<Button variant="outline">
-				<Copy></Copy>
+			<Button variant="outline" @click="copy(strOut)">
+				<CopyCheck v-if="copied"></CopyCheck>
+				<Copy v-else></Copy>
 			</Button>
 		</div>
 		<Textarea class="flex-1 h-full bg-background resize-none" :placeholder="$t('pages.encode.output')" v-model="strOut"></Textarea>
@@ -34,11 +35,17 @@
 </template>
 
 <script setup lang="ts">
-import { Copy } from 'lucide-vue-next'
+import { Copy, CopyCheck } from 'lucide-vue-next'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { useClipboard } from '@vueuse/core'
 
 const { encodes, enc, mode, strIn, strOut, encode, decode } = useEncodePage()
+
+const { copy, copied } = useClipboard({
+    source: strOut,
+    copiedDuring: 2000,
+})
 </script>

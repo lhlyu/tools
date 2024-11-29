@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         '@nuxtjs/i18n',
         '@nuxtjs/color-mode',
         '@nuxtjs/tailwindcss',
-        'shadcn-nuxt'
+        'shadcn-nuxt',
     ],
     site: {
         url: 'https://tools.tatakai.top/',
@@ -58,8 +58,6 @@ export default defineNuxtConfig({
         fallback: 'light',
         classPrefix: '',
         classSuffix: '',
-        storage: 'localStorage',
-        storageKey: 'nuxt-color-mode'
     },
     shadcn: {
         prefix: '',
