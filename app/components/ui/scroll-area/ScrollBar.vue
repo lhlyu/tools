@@ -4,13 +4,13 @@ import { ScrollAreaScrollbar, type ScrollAreaScrollbarProps, ScrollAreaThumb } f
 import { computed, type HTMLAttributes } from 'vue'
 
 const props = withDefaults(defineProps<ScrollAreaScrollbarProps & { class?: HTMLAttributes['class'] }>(), {
-  orientation: 'vertical',
+    orientation: 'vertical',
 })
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+    const { class: _, ...delegated } = props
 
-  return delegated
+    return delegated
 })
 </script>
 

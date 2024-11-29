@@ -15,8 +15,10 @@
     "@nuxtjs/i18n": "^9.1.0",
     "@radix-icons/vue": "^1.0.0",
     "@vueuse/core": "^11.3.0",
+    "base-x": "^5.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "crypto-js": "^4.2.0",
     "lucide-vue-next": "^0.460.0",
     "nuxt": "^3.14.1592",
     "radix-vue": "^1.9.10",
@@ -30,6 +32,7 @@
     "@nuxtjs/robots": "^4.1.11",
     "@nuxtjs/sitemap": "^6.1.5",
     "@nuxtjs/tailwindcss": "^6.12.2",
+    "@types/crypto-js": "^4.2.2",
     "sass": "^1.81.0",
     "shadcn-nuxt": "^0.11.3"
   }

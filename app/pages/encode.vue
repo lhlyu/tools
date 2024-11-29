@@ -1,50 +1,44 @@
 <template>
 	<div class="flex flex-col gap-4 h-full">
-		<Tabs default-value="base" class="h-6">
+		<Tabs class="h-6" v-model="enc">
 			<TabsList class="w-full">
-				<TabsTrigger value="base">
-					Base
-				</TabsTrigger>
-				<TabsTrigger value="url">
-					Url
-				</TabsTrigger>
-				<TabsTrigger value="hex">
-					Hex
-				</TabsTrigger>
-				<TabsTrigger value="unicode">
-					Unicode
+				<TabsTrigger v-for="(v, k, i) in encodes" :value="k" :key="k">
+					{{ k.charAt(0).toUpperCase() + k.slice(1).toLowerCase() }}
 				</TabsTrigger>
 			</TabsList>
 		</Tabs>
-		<Textarea class="flex-1 h-full bg-background resize-none" :placeholder="$t('pages.encode.input')"></Textarea>
+		<Textarea class="flex-1 h-full bg-background resize-none" :placeholder="$t('pages.encode.input')" v-model="strIn"></Textarea>
 		<div class="flex items-center justify-center flex-shrink-0 w-full h-6 gap-1">
-			<Button>
-				<Code></Code> Base64
-			</Button>
-			<Button variant="outline">
+			<Select v-model="mode">
+				<SelectTrigger class="w-[100px]">
+					<SelectValue placeholder="Select a timezone" />
+				</SelectTrigger>
+				<SelectContent>
+					<SelectItem v-for="v in encodes[enc]" :value="v" :key="v">
+						{{ v }}
+					</SelectItem>
+				</SelectContent>
+			</Select>
+			<Button variant="outline" @click="encode">
 				{{ $t('pages.encode.encode') }}
 			</Button>
-			<Button variant="outline">
+			<Button variant="outline" @click="decode">
 				{{ $t('pages.encode.decode') }}
 			</Button>
 			<Button variant="outline">
 				<Copy></Copy>
 			</Button>
 		</div>
-		<Textarea class="flex-1 h-full bg-background resize-none" :placeholder="$t('pages.encode.output')"></Textarea>
+		<Textarea class="flex-1 h-full bg-background resize-none" :placeholder="$t('pages.encode.output')" v-model="strOut"></Textarea>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { Code, Copy } from 'lucide-vue-next'
+import { Copy } from 'lucide-vue-next'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
-import {
-	Tabs,
-	TabsList,
-	TabsTrigger,
-} from '@/components/ui/tabs'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
-
-
+const { encodes, enc, mode, strIn, strOut, encode, decode } = useEncodePage()
 </script>
