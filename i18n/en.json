@@ -42,10 +42,10 @@
         }
       }
     },
-      "encode": {
+    "encode": {
       "title": "Encode/Decode",
-        "input": "Input...",
-        "output": "Output...",
+      "input": "Input...",
+      "output": "Output...",
       "encode": "Encode",
       "decode": "Decode"
     }

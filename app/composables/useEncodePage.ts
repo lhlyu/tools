@@ -86,6 +86,16 @@ const useEncodePage = () => {
         }
     }
 
+    const clear = () => {
+        strIn.value = ''
+        strOut.value = ''
+    }
+
+    const moveUp = () => {
+        strIn.value = strOut.value
+        strOut.value = ''
+    }
+
     return {
         encodes,
         enc,
@@ -94,6 +104,8 @@ const useEncodePage = () => {
         strOut,
         encode,
         decode,
+        clear,
+        moveUp,
     }
 }
 
