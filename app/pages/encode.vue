@@ -40,12 +40,12 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import {useClipboard} from "@vueuse/core";
+import { useClipboard } from '@vueuse/core'
 
 const { encodes, enc, mode, strIn, strOut, encode, decode } = useEncodePage()
 
 const { copy, copied } = useClipboard({
-	source: strOut,
-	copiedDuring: 2000,
+    source: strOut,
+    copiedDuring: 2000,
 })
 </script>

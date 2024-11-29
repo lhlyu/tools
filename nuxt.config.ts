@@ -58,8 +58,6 @@ export default defineNuxtConfig({
         fallback: 'light',
         classPrefix: '',
         classSuffix: '',
-        storage: 'localStorage',
-        storageKey: 'nuxt-color-mode'
     },
     shadcn: {
         prefix: '',
