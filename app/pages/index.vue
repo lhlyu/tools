@@ -52,7 +52,7 @@ const tools = [
         name: 'pages.index.tools.qr.name',
         description: 'pages.index.tools.qr.desc',
         icon: QrCodeIcon,
-        link: '#qr-code-generation',
+        link: '/qr',
     },
     {
         name: 'pages.index.tools.jsonPath.name',

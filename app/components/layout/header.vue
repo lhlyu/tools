@@ -34,8 +34,8 @@
 				</DropdownMenu>
 				<ColorScheme placeholder="">
 					<Button variant="ghost" size="icon" @click="toggleThemeMode">
-						<Moon v-if="colorMode.preference === 'dark'" />
-						<Sun v-else />
+						<Sun v-if="colorMode.preference === 'dark'" />
+						<Moon v-else />
 					</Button>
 				</ColorScheme>
 			</div>
