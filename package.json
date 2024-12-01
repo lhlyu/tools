@@ -21,6 +21,7 @@
     "crypto-js": "^4.2.0",
     "lucide-vue-next": "^0.460.0",
     "nuxt": "^3.14.1592",
+    "qrcode": "^1.5.4",
     "radix-vue": "^1.9.10",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
@@ -33,6 +34,7 @@
     "@nuxtjs/sitemap": "^6.1.5",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@types/crypto-js": "^4.2.2",
+    "@types/qrcode": "^1.5.5",
     "sass": "^1.81.0",
     "shadcn-nuxt": "^0.11.3"
   }
