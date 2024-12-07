@@ -8,6 +8,7 @@ import {
     hexDecode,
     unicodeDecode,
 } from '~/utils'
+import { useClipboard } from '@vueuse/core'
 
 const encodes: Record<string, string[]> = {
     base: [
@@ -44,12 +45,17 @@ const useEncodePage = () => {
     const strIn = ref('')
     const strOut = ref('')
 
+    const options = ref(encodes[enc.value].map((v) => ({ label: v, value: v })))
+
     watch(enc, (newValue, oldValue) => {
+        options.value = encodes[newValue].map((v) => ({ label: v, value: v }))
         mode.value = encodes[newValue].at(0) as string
     })
 
     const encode = () => {
         strOut.value = ''
+
+        strIn.value = strIn.value.trim()
 
         switch (enc.value) {
             case 'base':
@@ -92,20 +98,33 @@ const useEncodePage = () => {
     }
 
     const moveUp = () => {
-        strIn.value = strOut.value
+        strIn.value = strOut.value.trim()
         strOut.value = ''
     }
 
+    const { copy, copied } = useClipboard({
+        source: strOut,
+        copiedDuring: 2000,
+    })
+
+    const copyOutput = async () => {
+        if (strOut.value.trim().length) {
+            await copy(strOut.value)
+        }
+    }
+
     return {
-        encodes,
         enc,
         mode,
         strIn,
         strOut,
+        options,
         encode,
         decode,
         clear,
         moveUp,
+        copied,
+        copyOutput,
     }
 }
 
