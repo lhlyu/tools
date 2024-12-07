@@ -61,7 +61,6 @@
       "format": "Format",
       "value": "Value",
       "dark": "Dark",
-      "light": "Light",
       "error": "Incorrect color format"
     }
   }
