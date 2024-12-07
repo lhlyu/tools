@@ -4,7 +4,7 @@
 	<n-space vertical size="large">
 		
 		<n-input-group>
-			<n-input v-model:value="strIn" :placeholder="$t('pages.color.input')" :maxlength="30" clearable show-count />
+			<n-input v-model:value="strIn" :placeholder="$t('pages.color.input')" :maxlength="30" clearable show-count @keydown.enter="conversion" />
 			<n-button type="primary" @click="conversion">
 				{{ $t('pages.color.button') }}
 			</n-button>
@@ -32,7 +32,6 @@
 				<TTr name="HSVA" :value="colors[7]"></TTr>
 				<TTr name="Name" :value="colors[8]"></TTr>
 				<TTr :name="$t('pages.color.dark')" :value="colors[9]"></TTr>
-				<TTr :name="$t('pages.color.light')" :value="colors[10]"></TTr>
 			</tbody>
 		</n-table>
 	</n-space>
@@ -58,7 +57,6 @@ const defaultColors = [
     'hsva(0, 100%, 100%, 1)',
     'red',
     'Yes',
-    'No',
 ]
 
 const colors = ref(defaultColors)
@@ -134,9 +132,6 @@ const conversion = () => {
 
     // is dark
     _colors.push(tc.isDark() ? 'Yes' : 'No')
-
-    // is light
-    _colors.push(tc.isLight() ? 'Yes' : 'No')
 
     colors.value = _colors
 }
