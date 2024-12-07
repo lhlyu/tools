@@ -48,6 +48,21 @@
       "output": "Output...",
       "encode": "Encode",
       "decode": "Decode"
+    },
+    "qr": {
+      "title": "Qrcode",
+      "input": "Input..."
+    },
+    "color": {
+      "title": "Color Conversion",
+      "input": "Color value...",
+      "button": "Convert",
+      "preview": "Preview",
+      "format": "Format",
+      "value": "Value",
+      "dark": "Dark",
+      "light": "Light",
+      "error": "Incorrect color format"
     }
   }
 }

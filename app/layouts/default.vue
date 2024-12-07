@@ -3,20 +3,22 @@
 		:theme="siteStore.theme === 'light' ? null : darkTheme"
 		:theme-overrides="siteStore.theme === 'light' ? light : dark"
 	>
-		<LayoutElement>
-			<LayoutContainer>
-				<LayoutHeader></LayoutHeader>
-				<LayoutMain>
-					<div class="main-container" :style="{
-			            minHeight: $route.path === '/' ? 'calc(100% - var(--c-footer-height))' : '100%',
-			            height: $route.path === '/' ? 'auto' : '100%',
-		        }">
-						<slot />
-					</div>
-					<LayoutFooter v-if="$route.path === '/'"></LayoutFooter>
-				</LayoutMain>
-			</LayoutContainer>
-		</LayoutElement>
+		<n-message-provider>
+			<LayoutElement>
+				<LayoutContainer>
+					<LayoutHeader></LayoutHeader>
+					<LayoutMain>
+						<div class="main-container" :style="{
+				            minHeight: $route.path === '/' ? 'calc(100% - var(--c-footer-height))' : '100%',
+				            height: $route.path === '/' ? 'auto' : '100%',
+			        }">
+							<slot />
+						</div>
+						<LayoutFooter v-if="$route.path === '/'"></LayoutFooter>
+					</LayoutMain>
+				</LayoutContainer>
+			</LayoutElement>
+		</n-message-provider>
 	</n-config-provider>
 </template>
 
