@@ -1,0 +1,11 @@
+{
+  "common": {
+    "primaryColor": "#14b8a6",
+    "primaryColorHover": "#22d3ee",
+    "primaryColorPressed": "#bae6fd",
+    "primaryColorSuppl": "#22d3ee",
+    "bodyColor": "#44475a",
+    "textColorBase": "#f8f8f2",
+    "cardColor": "#272935"
+  }
+}

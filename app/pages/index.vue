@@ -1,11 +1,12 @@
 <template>
-	<div class="cards grid gap-4">
+	<Title>{{ $t('title') }}</Title>
+	<div class="cards">
 		<TCard v-for="tool in tools"
 		       :key="tool.name"
 		       :title="$t(tool.name)"
 		       :description="$t(tool.description)"
 		       :to="tool.link" >
-			<component :is="tool.icon" class="w-8 h-8 text-primary" />
+			<component :is="tool.icon" class="icon" />
 		</TCard>
 	</div>
 </template>
@@ -83,6 +84,13 @@ const tools = [
 
 <style lang="scss" scoped>
 .cards {
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	
+	.icon {
+		height: 2rem;
+		width: 2rem;
+	}
 }
 </style>

@@ -3,7 +3,9 @@ export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     srcDir: 'app/',
     devtools: { enabled: false },
-    css: ['assets/styles/main.css'],
+    imports: {
+        dirs: ['stores'],
+    },
     app: {
         keepalive: true,
         head: {
@@ -17,12 +19,12 @@ export default defineNuxtConfig({
         rootTag: 'body',
     },
     modules: [
+        '@vueuse/nuxt',
         '@nuxtjs/sitemap',
         '@nuxtjs/robots',
         '@nuxtjs/i18n',
-        '@nuxtjs/color-mode',
-        '@nuxtjs/tailwindcss',
-        'shadcn-nuxt',
+        '@pinia/nuxt',
+        'pinia-plugin-persistedstate/nuxt',
     ],
     site: {
         url: 'https://tools.tatakai.top/',
@@ -53,14 +55,14 @@ export default defineNuxtConfig({
             alwaysRedirect: true
         },
     },
-    colorMode: {
-        preference: 'light',
-        fallback: 'light',
-        classPrefix: '',
-        classSuffix: '',
+
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    api: 'modern-compiler',
+                }
+            }
+        },
     },
-    shadcn: {
-        prefix: '',
-        componentDir: './app/components/ui'
-    }
 })

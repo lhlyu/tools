@@ -1,12 +1,15 @@
 <template>
-	<main class="flex-1 relative h-full overflow-y-auto bg-muted">
+	<main>
 		<slot></slot>
 	</main>
 </template>
 
-<script setup lang="ts">
-
-</script>
-
 <style scoped lang="scss">
+main {
+	position: relative;
+	flex: 1;
+	height: 100%;
+	overflow: auto;
+	background-color: var(--body-color);
+}
 </style>
