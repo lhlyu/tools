@@ -80,6 +80,8 @@ header {
 	align-items: center;
 	height: var(--c-header-height);
 	background: var(--card-color);
+	border-bottom: 1px solid var(--border-color);
+	box-sizing: border-box;
 	transition: all 0.3s;
 	
 	.header {

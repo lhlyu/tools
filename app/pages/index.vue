@@ -11,17 +11,7 @@
 </template>
 
 <script setup>
-import {
-    CodeIcon,
-    ShieldIcon,
-    ClockIcon,
-    LinkIcon,
-    QrCodeIcon,
-    DatabaseIcon,
-    RefreshCwIcon,
-    ImageIcon,
-    DropletIcon,
-} from 'lucide-vue-next'
+import { CodeIcon, QrCodeIcon, DropletIcon, BracesIcon } from 'lucide-vue-next'
 
 const tools = [
     {
@@ -41,6 +31,12 @@ const tools = [
         description: 'pages.index.tools.color.desc',
         icon: DropletIcon,
         link: '/color',
+    },
+    {
+        name: 'pages.index.tools.jsonpath.name',
+        description: 'pages.index.tools.jsonpath.desc',
+        icon: BracesIcon,
+        link: '/jsonpath',
     },
 ]
 </script>
