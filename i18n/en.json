@@ -3,6 +3,7 @@
   "more": "More",
   "pages": {
     "index": {
+      "title": "ToolSet",
       "tools": {
         "encode": {
           "name": "Encode/Decode",

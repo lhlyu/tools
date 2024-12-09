@@ -3,6 +3,7 @@
   "more": "更多",
   "pages": {
     "index": {
+      "title": "工具集",
       "tools": {
         "encode": {
           "name": "编码/解码",

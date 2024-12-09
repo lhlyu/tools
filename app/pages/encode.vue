@@ -1,20 +1,23 @@
 <template>
-	<Title>{{ $t('pages.encode.title') }}</Title>
+	
 	<div class="container">
-		<n-tabs type="segment" animated v-model:value="enc">
-			<n-tab name="base">
-				Base
-			</n-tab>
-			<n-tab name="url">
-				Url
-			</n-tab>
-			<n-tab name="hex">
-				Hex
-			</n-tab>
-			<n-tab name="unicode">
-				Unicode
-			</n-tab>
-		</n-tabs>
+		<n-card content-style="padding: 0;">
+			<n-tabs justify-content="space-evenly" v-model:value="enc">
+				<n-tab name="base">
+					Base
+				</n-tab>
+				<n-tab name="url">
+					Url
+				</n-tab>
+				<n-tab name="hex">
+					Hex
+				</n-tab>
+				<n-tab name="unicode">
+					Unicode
+				</n-tab>
+			</n-tabs>
+		</n-card>
+		
 		<n-input
 			v-model:value="strIn"
 			class="input"
