@@ -25,7 +25,7 @@
           "name": "二维码生成",
           "desc": "生成二维码，支持文本、链接等多种内容"
         },
-        "jsonPath": {
+        "jsonpath": {
           "name": "JsonPath",
           "desc": "解析 JSON 数据，支持 JsonPath 查询与验证"
         },
@@ -63,6 +63,11 @@
       "value": "值",
       "dark": "暗色",
       "error": "颜色格式不正确"
+    },
+    "jsonpath": {
+      "title": "JsonPath",
+      "input": "输入...",
+      "button": "确定"
     }
   }
 }

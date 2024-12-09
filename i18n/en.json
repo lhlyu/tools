@@ -25,7 +25,7 @@
           "name": "QR Code Generation",
           "desc": "Generates QR codes for text, links, and other content"
         },
-        "jsonPath": {
+        "jsonpath": {
           "name": "JsonPath",
           "desc": "Parses JSON data and supports JsonPath queries and validation"
         },
@@ -63,6 +63,11 @@
       "value": "Value",
       "dark": "Dark",
       "error": "Incorrect color format"
+    },
+    "jsonpath": {
+      "title": "JsonPath",
+      "input": "Input...",
+      "button": "Confirm"
     }
   }
 }

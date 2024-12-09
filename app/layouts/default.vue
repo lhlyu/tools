@@ -33,6 +33,8 @@ useHead({
     titleTemplate: () => t(`pages.${route.name as string}.title`),
 })
 
+const customLayouts: (string | symbol | undefined)[] = ['jsonpath']
+
 const style = computed(() => {
     const _style: Record<string, string> = {
         minHeight: '100%',
@@ -45,6 +47,12 @@ const style = computed(() => {
         _style['minHeight'] = 'calc(100% - var(--c-footer-height))'
         _style['height'] = 'auto'
     }
+
+    if (customLayouts.includes(route.name)) {
+        _style['maxWidth'] = '100%'
+        _style['padding'] = '0'
+    }
+
     return _style
 })
 </script>
