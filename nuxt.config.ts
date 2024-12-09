@@ -8,27 +8,20 @@ export default defineNuxtConfig({
     },
     app: {
         keepalive: true,
-        head: {
-            htmlAttrs: {
-                lang: 'zh-cmn-Hans',
-            },
-            charset: 'utf-8',
-            viewport: 'width=device-width, initial-scale=1',
-            title: '工具集',
-        },
         rootTag: 'body',
     },
     modules: [
         '@vueuse/nuxt',
-        '@nuxtjs/sitemap',
-        '@nuxtjs/robots',
+        '@nuxtjs/seo',
         '@nuxtjs/i18n',
         '@pinia/nuxt',
         'pinia-plugin-persistedstate/nuxt',
+        'nuxt-monaco-editor',
     ],
+    monacoEditor: { removeSourceMaps: true },
     site: {
         url: 'https://tools.tatakai.top/',
-        name: '工具集 | toolset'
+        name: '工具集'
     },
     i18n: {
         locales: [

@@ -8,13 +8,10 @@
 				<LayoutContainer>
 					<LayoutHeader></LayoutHeader>
 					<LayoutMain>
-						<div class="main-container" :style="{
-				            minHeight: $route.path === '/' ? 'calc(100% - var(--c-footer-height))' : '100%',
-				            height: $route.path === '/' ? 'auto' : '100%',
-			        }">
+						<div class="main-container" :style="style">
 							<slot />
 						</div>
-						<LayoutFooter v-if="$route.path === '/'"></LayoutFooter>
+						<LayoutFooter v-if="route.name === 'index'"></LayoutFooter>
 					</LayoutMain>
 				</LayoutContainer>
 			</LayoutElement>
@@ -27,15 +24,35 @@ import { darkTheme } from 'naive-ui'
 import light from '~/assets/themes/light.json'
 import dark from '~/assets/themes/dark.json'
 
+const route = useRoute()
 const siteStore = useSiteStore()
+
+const { t } = useI18n()
+
+useHead({
+    titleTemplate: () => t(`pages.${route.name as string}.title`),
+})
+
+const style = computed(() => {
+    const _style: Record<string, string> = {
+        minHeight: '100%',
+        height: '100%',
+        maxWidth: 'var(--c-main-max-width)',
+        padding: '1rem',
+    }
+
+    if (route.name === 'index') {
+        _style['minHeight'] = 'calc(100% - var(--c-footer-height))'
+        _style['height'] = 'auto'
+    }
+    return _style
+})
 </script>
 
 <style lang="scss" scoped>
 .main-container {
-	max-width: var(--c-main-max-width);
 	width: 100%;
 	margin: 0 auto;
-	padding: 1rem;
 	box-sizing: border-box;
 }
 </style>

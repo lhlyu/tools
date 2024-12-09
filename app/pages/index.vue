@@ -1,14 +1,13 @@
 <template>
-	<Title>{{ $t('title') }}</Title>
-	<div class="cards">
-		<TCard v-for="tool in tools"
-		       :key="tool.name"
-		       :title="$t(tool.name)"
-		       :description="$t(tool.description)"
-		       :to="tool.link" >
-			<component :is="tool.icon" class="icon" />
-		</TCard>
-	</div>
+		<div class="cards">
+			<TCard v-for="tool in tools"
+			       :key="tool.name"
+			       :title="$t(tool.name)"
+			       :description="$t(tool.description)"
+			       :to="tool.link" >
+				<component :is="tool.icon" class="icon" />
+			</TCard>
+		</div>
 </template>
 
 <script setup>

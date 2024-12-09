@@ -1,5 +1,4 @@
 <template>
-	<Title>{{ $t('pages.qr.title') }}</Title>
 	
 	<div class="container">
 		<div class="left">

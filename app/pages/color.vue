@@ -1,6 +1,4 @@
 <template>
-	<Title>{{ $t('pages.color.title') }}</Title>
-	
 	<n-space vertical size="large">
 		
 		<n-input-group>
