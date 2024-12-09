@@ -52,9 +52,15 @@ const copyOutput = async () => {
 }
 
 const confirm = () => {
-    if (jp.value.trim().length) {
+	jp.value = jp.value.trim()
+    if (jp.value.length) {
+		
+		if (jp.value.indexOf('$.') === -1) {
+			jp.value = '$.' + jp.value
+		}
+		
         const j = JSON.parse(strIn.value)
-        const result = JSONPath({ path: jp.value.trim(), json: j })
+        const result = JSONPath({ path: jp.value, json: j })
         strOut.value = JSON.stringify(result, null, 4)
     }
 }
