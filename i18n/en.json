@@ -9,6 +9,10 @@
           "name": "Encode/Decode",
           "desc": "Supports common encoding operations such as Base64 and URL encoding/decoding"
         },
+        "hash": {
+          "name": "HASH",
+          "desc": "Supports common operations such as MD5 and SHA"
+        },
         "encrypt": {
           "name": "Encrypt/Decrypt",
           "desc": "Supports symmetric encryption (AES/DES) and asymmetric encryption (RSA) operations"
@@ -68,6 +72,12 @@
       "title": "JsonPath",
       "input": "Input...",
       "button": "Confirm"
+    },
+    "hash": {
+      "title": "Hash",
+      "input": "Input...",
+      "output": "Output...",
+      "encode": "Hash"
     }
   }
 }

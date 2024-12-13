@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { CodeIcon, QrCodeIcon, DropletIcon, BracesIcon } from 'lucide-vue-next'
+import { CodeIcon, HashIcon, QrCodeIcon, DropletIcon, BracesIcon } from 'lucide-vue-next'
 
 const tools = [
     {
@@ -19,6 +19,12 @@ const tools = [
         description: 'pages.index.tools.encode.desc',
         icon: CodeIcon,
         link: '/encode',
+    },
+    {
+        name: 'pages.index.tools.hash.name',
+        description: 'pages.index.tools.hash.desc',
+        icon: HashIcon,
+        link: '/hash',
     },
     {
         name: 'pages.index.tools.qr.name',
