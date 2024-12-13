@@ -3,17 +3,17 @@
 	<div class="container">
 		<n-card content-style="padding: 0;">
 			<n-tabs justify-content="space-evenly" v-model:value="enc">
-				<n-tab name="base">
-					Base
+				<n-tab name="md5">
+					MD5
 				</n-tab>
-				<n-tab name="url">
-					Url
+				<n-tab name="sha1">
+					SHA1
 				</n-tab>
-				<n-tab name="hex">
-					Hex
+				<n-tab name="sha256">
+					SHA256
 				</n-tab>
-				<n-tab name="unicode">
-					Unicode
+				<n-tab name="sha512">
+					SHA512
 				</n-tab>
 			</n-tabs>
 		</n-card>
@@ -22,7 +22,7 @@
 			v-model:value="strIn"
 			class="input"
 			type="textarea"
-			:placeholder="$t('pages.encode.input')"
+			:placeholder="$t('pages.hash.input')"
 			clearable
 			show-count
 		>
@@ -32,24 +32,13 @@
 		</n-input>
 		
 		<n-space justify="center">
-			<n-select v-model:value="mode" v-if="options.length > 1" :options="options" style="width: 100px" />
 			<n-button strong secondary type="primary" @click="encode">
-				{{ $t('pages.encode.encode') }}
-			</n-button>
-			<n-button strong secondary type="info" @click="decode">
-				{{ $t('pages.encode.decode') }}
+				{{ $t('pages.hash.encode') }}
 			</n-button>
 			<n-button strong secondary type="error" @click="clear">
 				<template #icon>
 					<n-icon>
 						<Trash2></Trash2>
-					</n-icon>
-				</template>
-			</n-button>
-			<n-button strong secondary type="info" @click="moveUp">
-				<template #icon>
-					<n-icon>
-						<MoveUp></MoveUp>
 					</n-icon>
 				</template>
 			</n-button>
@@ -67,7 +56,7 @@
 			v-model:value="strOut"
 			class="output"
 			type="textarea"
-			:placeholder="$t('pages.encode.output')"
+			:placeholder="$t('pages.hash.output')"
 			clearable
 			show-count
 		>
@@ -80,9 +69,10 @@
 </template>
 
 <script setup lang="ts">
-import { Copy, ClipboardCheck, Trash2, MoveUp } from 'lucide-vue-next'
+import { Copy, ClipboardCheck, Trash2 } from 'lucide-vue-next'
+import useHashPage from '~/composables/useHashPage'
 
-const { enc, mode, strIn, strOut, options, encode, decode, clear, moveUp, copied, copyOutput } = useEncodePage()
+const { enc, strIn, strOut, encode, clear, copied, copyOutput } = useHashPage()
 </script>
 
 <style scoped lang="scss">
