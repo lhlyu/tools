@@ -40,6 +40,8 @@ const encodes: Record<string, string[]> = {
 }
 
 const useEncodePage = () => {
+    const message = useMessage()
+
     const enc = ref('base')
     const mode = ref('base64')
     const strIn = ref('')
@@ -76,19 +78,23 @@ const useEncodePage = () => {
     const decode = () => {
         strOut.value = ''
 
-        switch (enc.value) {
-            case 'base':
-                strOut.value = baseDecode(strIn.value, mode.value)
-                return
-            case 'url':
-                strOut.value = urlDecode(strIn.value)
-                return
-            case 'hex':
-                strOut.value = hexDecode(strIn.value)
-                return
-            case 'unicode':
-                strOut.value = unicodeDecode(strIn.value, mode.value)
-                return
+        try {
+            switch (enc.value) {
+                case 'base':
+                    strOut.value = baseDecode(strIn.value, mode.value)
+                    return
+                case 'url':
+                    strOut.value = urlDecode(strIn.value)
+                    return
+                case 'hex':
+                    strOut.value = hexDecode(strIn.value)
+                    return
+                case 'unicode':
+                    strOut.value = unicodeDecode(strIn.value, mode.value)
+                    return
+            }
+        } catch (e) {
+            message.error((e as any).message)
         }
     }
 
