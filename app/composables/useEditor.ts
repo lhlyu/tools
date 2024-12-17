@@ -4,12 +4,11 @@ const useEditor = () => {
     const siteStore = useSiteStore()
 
     const options: monaco.editor.IStandaloneEditorConstructionOptions = {
-        fontSize: 16,
         fontWeight: 'bolder',
         theme: siteStore.theme === 'light' ? 'vitesse-light' : 'dracula',
         renderWhitespace: 'selection',
         scrollBeyondLastLine: false,
-        tabSize: 4,
+        tabSize: 2,
         lineDecorationsWidth: 5,
         lineNumbersMinChars: 4,
         automaticLayout: true,
@@ -18,6 +17,10 @@ const useEditor = () => {
         acceptSuggestionOnEnter: 'off',
         contextmenu: false,
         showFoldingControls: 'always', // 是否一直显示折叠 always | mouseover
+        autoSurround: 'never',
+        stickyScroll: {
+            enabled: false,
+        },
         colorDecorators: true,
         quickSuggestions: false, // 禁用快速建议
         parameterHints: { enabled: false }, // 禁用参数提示
