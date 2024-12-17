@@ -3,6 +3,13 @@
 		<div class="top">
 			<n-input-group>
 				<n-input v-model:value="jp" @keydown.enter="confirm" :placeholder="$t('pages.jsonpath.input')" clearable />
+				<n-button strong secondary type="tertiary" @click="format">
+					<template #icon>
+						<n-icon>
+							<Text></Text>
+						</n-icon>
+					</template>
+				</n-button>
 				<n-button strong secondary type="primary" @click="copyOutput">
 					<template #icon>
 						<n-icon>
@@ -17,7 +24,7 @@
 			</n-input-group>
 		</div>
 		<div class="bottom">
-			<n-split :direction="width > 900 ? 'horizontal' : 'vertical'" :resize-trigger-size="8" :max="width > 900 ? 0.8 : 0.5" :min="width > 900 ? 0.2 : 0.5">
+			<n-split :direction="width > 900 ? 'horizontal' : 'vertical'" :resize-trigger-size="4" :max="width > 900 ? 0.8 : 0.5" :min="width > 900 ? 0.2 : 0.5">
 				<template #1>
 					<MonacoEditor v-model="strIn" lang="json" :options="options" class="editor"></MonacoEditor>
 				</template>
@@ -30,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { ClipboardCheck, Copy } from 'lucide-vue-next'
+import { Text, ClipboardCheck, Copy } from 'lucide-vue-next'
 import { useClipboard } from '@vueuse/core'
 import { JSONPath } from 'jsonpath-plus'
 
@@ -40,6 +47,8 @@ const { options } = useEditor()
 const jp = ref('')
 const strIn = ref('')
 const strOut = ref('')
+
+const message = useMessage()
 
 const { copy, copied } = useClipboard({
     copiedDuring: 2000,
@@ -51,16 +60,28 @@ const copyOutput = async () => {
     }
 }
 
-const confirm = () => {
-    jp.value = jp.value.trim()
-    if (jp.value.length) {
-        if (jp.value.indexOf('$.') === -1) {
-            jp.value = '$.' + jp.value
-        }
+const format = () => {
+    try {
+        strIn.value = JSON.stringify(JSON.parse(strIn.value), null, 2)
+    } catch (e: any) {
+        message.error(e.message)
+    }
+}
 
-        const j = JSON.parse(strIn.value)
-        const result = JSONPath({ path: jp.value, json: j })
-        strOut.value = JSON.stringify(result, null, 4)
+const confirm = () => {
+    try {
+        jp.value = jp.value.trim()
+        if (jp.value.length) {
+            if (jp.value.indexOf('$.') === -1) {
+                jp.value = '$.' + jp.value
+            }
+
+            const j = JSON.parse(strIn.value)
+            const result = JSONPath({ path: jp.value, json: j })
+            strOut.value = JSON.stringify(result, null, 2)
+        }
+    } catch (e: any) {
+        message.error(e.message)
     }
 }
 </script>
